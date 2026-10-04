@@ -1,15 +1,17 @@
 ﻿using System.Globalization;
 
-Console.Write("Enter x1, y1, x2, y2, x3, y3, x4, y4: ");
-// This reads one line of input and turns it into an array of doubles
-double[] v = [.. Console.ReadLine()!
-            .Split(' ', StringSplitOptions.RemoveEmptyEntries)
-            .Select(s => double.Parse(s, CultureInfo.InvariantCulture))];
-
-Console.WriteLine(Problem3_25.Run(v[0], v[1], v[2], v[3], v[4], v[5], v[6], v[7]));
-
 public static class Problem3_25
 {
+    public static void Main()
+    {
+        Console.Write("Enter x1, y1, x2, y2, x3, y3, x4, y4: ");
+        // This reads one line of input and turns it into an array of doubles
+        double[] v = [.. Console.ReadLine()!
+            .Split(' ', StringSplitOptions.RemoveEmptyEntries)
+            .Select(s => double.Parse(s, CultureInfo.InvariantCulture))];
+        Console.WriteLine(Run(v[0], v[1], v[2], v[3], v[4], v[5], v[6], v[7]));
+    }
+
     public static string Run(double x1, double y1,
                              double x2, double y2,
                              double x3, double y3,
